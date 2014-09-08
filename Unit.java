@@ -4,7 +4,7 @@ package sokolchik.paul.units;
  * Created by sokolchik_p on 20.08.2014.
  */
 public abstract class Unit {
-    int x,y;
+    int x, y;
 
     protected String name;
     protected int health;
@@ -14,8 +14,8 @@ public abstract class Unit {
         name = "Stranger";
         health = 100;
         velocity = 4;
-        x=0;
-        y=0;
+        x = 0;
+        y = 0;
     }
 
     public Unit(String name, int health, int velocity) {
@@ -42,8 +42,8 @@ public abstract class Unit {
     }
      */
 
-    void moveTo(int x, int y){
-        this.x=x;
-        this.y=y;
+    void moveTo(int x, int y) {
+        this.x = x;
+        this.y = y;
     }
 }

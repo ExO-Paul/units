@@ -5,5 +5,6 @@ package sokolchik.paul.units;
  */
 public interface Command {
     void execute();
-    void undo ();
+
+    void undo();
 }

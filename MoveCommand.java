@@ -5,27 +5,27 @@ package sokolchik.paul.units;
  */
 public class MoveCommand implements Command {
     private Unit unit;
-    private int x,y;
+    private int x, y;
     private int prevX;
     private int prevY;
 
 
-    public MoveCommand (Unit unit, int x, int y){
+    public MoveCommand(Unit unit, int x, int y) {
         this.unit = unit;
-        this.x=x;
-        this.y=y;
+        this.x = x;
+        this.y = y;
     }
 
     @Override
     public void execute() {
         prevX = unit.x;
-        prevY=unit.y;
-        unit.moveTo(x,y);
+        prevY = unit.y;
+        unit.moveTo(x, y);
     }
 
     @Override
     public void undo() {
-        unit.moveTo(prevX,prevY);
+        unit.moveTo(prevX, prevY);
 
     }
 }
