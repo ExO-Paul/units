@@ -1,31 +1,35 @@
 package sokolchik.paul.units;
 
+
+import java.util.Deque;
+import java.util.LinkedList;
+import java.util.Stack;
+
 /**
  * Created by sokolchik_p on 03.09.2014.
  */
 public class MoveCommand implements Command {
     private Unit unit;
-    private int x, y;
-    private int prevX;
-    private int prevY;
+    private Position newPosition;
+    //private static Deque<Position> historyD = new LinkedList<Position>();
+    private static Stack<Position> history = new Stack<Position>();
 
 
-    public MoveCommand(Unit unit, int x, int y) {
+    public MoveCommand (Unit unit, Position newPosition){
         this.unit = unit;
-        this.x = x;
-        this.y = y;
+        this.newPosition = newPosition;
     }
 
     @Override
     public void execute() {
-        prevX = unit.x;
-        prevY = unit.y;
-        unit.moveTo(x, y);
+        history.push(unit.currentPos);
+        //historyD.push(unit.currentPos);
+        unit.moveTo(newPosition);
     }
 
     @Override
     public void undo() {
-        unit.moveTo(prevX, prevY);
-
+        unit.moveTo(history.pop());
+        //unit.moveTo(historyD.pop());
     }
 }

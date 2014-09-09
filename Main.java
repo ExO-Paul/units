@@ -23,11 +23,25 @@ public class Main {
         }
 
         System.out.println(units[3].getInfo());
-        MoveCommand move = new MoveCommand(units[3], 5, 2);
+        MoveCommand move = new MoveCommand(units[3],new Position(5, 2));
+        move.execute();
+        System.out.println(units[3].getInfo());
+        move = new MoveCommand(units[3],new Position(8, 1));
+        move.execute();
+        System.out.println(units[3].getInfo());
+        move = new MoveCommand(units[3],new Position(9, 3));
+        move.execute();
+        System.out.println(units[3].getInfo());
+        move = new MoveCommand(units[3],new Position(6, 6));
         move.execute();
         System.out.println(units[3].getInfo());
         move.undo();
         System.out.println(units[3].getInfo());
+        move.undo();
+        System.out.println(units[3].getInfo());
+        move.undo();
+        System.out.println(units[3].getInfo());
+
 
     }
 

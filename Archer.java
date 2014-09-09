@@ -30,7 +30,7 @@ public class Archer extends Unit {
     }
 
     public String getInfo() {
-        return "Archer " + name + " is " + health + "% healthy, can run on " + velocity + "kph and has " + arrows + " arrows left";
+        return "Archer " + name + " is on position ("+currentPos.x+", "+currentPos.y+"), " + health + "% healthy, can run on " + velocity + "kph and has " + arrows + " arrows left";
     }
 
 }

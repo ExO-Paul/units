@@ -31,6 +31,6 @@ public class Wizard extends Unit {
 
     @Override
     public String getInfo() {
-        return "Wizard " + name + " is on position (" + x + ", " + y + "), " + health + "% healthy, can run on " + velocity + "kph and has " + mana + "% of his power left";
+        return "Wizard " + name + " is on position ("+currentPos.x+", "+currentPos.y+"), " + health + "% healthy, can run on " + velocity + "kph and has " + mana + "% of his power left";
     }
 }
